@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdoNet", "AdoNet\AdoNet.csproj", "{35C0B56D-CD85-4D62-A955-53D6875BABB8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{35C0B56D-CD85-4D62-A955-53D6875BABB8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35C0B56D-CD85-4D62-A955-53D6875BABB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35C0B56D-CD85-4D62-A955-53D6875BABB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35C0B56D-CD85-4D62-A955-53D6875BABB8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
