@@ -6,4 +6,16 @@ var user = new UserRepository(connectionString: "Host=localhost;Database=adonet;
 var id = await user.CreateAsync("test", "test@mail.ru", "123456", CancellationToken.None);
 Console.WriteLine(id);
 
+var command = Console.ReadLine();
+if (command?.Trim() == "delete")
+{
+    await user.DeleteAsync(id, CancellationToken.None);
+    Console.WriteLine($"Удалён {id}");
+}
+else
+{
+    Console.WriteLine($"Не удалено, ввёл: '{command}'");
+}
+
+
 

@@ -20,8 +20,24 @@ public class UserRepository(string connectionString):BaseRepository(connectionSt
         command.Parameters.AddWithValue("p_password", NpgsqlDbType.Varchar ,password);
         command.Parameters.Add("p_id", NpgsqlDbType.Uuid).Direction = ParameterDirection.Output;
 
-        await command.ExecuteNonQueryAsync(ct);
+        var result = await command.ExecuteScalarAsync(ct);
         
-        return Guid.NewGuid();
+        return result is Guid id
+            ? id
+            : throw new InvalidOperationException("Процедура не вернула UUID");
+    }
+    
+    public async Task DeleteAsync(Guid id, CancellationToken ct)
+    {
+        await using var connection = await OpenConnectionAsync(ct);
+        
+        await using var command = new NpgsqlCommand("public.delete_user", connection)
+        {
+            CommandType = CommandType.StoredProcedure
+        };
+        
+        command.Parameters.AddWithValue("p_id", NpgsqlDbType.Uuid, id);
+        
+        await command.ExecuteScalarAsync(ct);
     }
 }

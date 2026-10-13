@@ -12,3 +12,14 @@ VALUES (p_name, p_email, p_password)
     RETURNING id INTO p_id;
 END;
 $$;
+
+CREATE OR REPLACE PROCEDURE public.delete_user(
+    IN p_id uuid
+)
+LANGUAGE plpgsql AS
+$$
+BEGIN
+DELETE FROM public.users WHERE id = p_id;
+END;
+$$;
+
