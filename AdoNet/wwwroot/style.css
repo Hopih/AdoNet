@@ -1,0 +1,27 @@
+body {
+    font-family: sans-serif;
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 0 16px;
+}
+
+input, select, button {
+    padding: 6px;
+    margin: 2px 4px 2px 0;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 12px 0 24px;
+}
+
+td {
+    border: 1px solid #ccc;
+    padding: 6px 10px;
+}
+
+tr:first-child td {
+    font-weight: bold;
+    background: #f2f2f2;
+}
